@@ -92,7 +92,7 @@
         <h1>Centro de report Neko Bot ❄️</h1>
     </header>
     <div class="container">
-        <img src="https://postimage.me/images/2024/12/18/IMG-20241217-WA0403.jpg" alt="Imagen de Ayuda">
+        <img src="https://postimage.me/images/2024/12/21/IMG-20241220-WA0088.jpg" alt="Imagen de Ayuda">
         <h2>Tu bot de confianza y aliado</h2>
         <p>Escribeme tu pregunta o problema en el buscador para obtener respuestas do na aparece contactar un asesor.</p>
         <input type="text" placeholder="Buscar preguntas o errores">
@@ -169,16 +169,23 @@ function joinGroup() {
     }
 
     function connectAdvisor() {
-        // Generar un número aleatorio dentro de un rango (por ejemplo, entre 5213339990000 y 5213339999999)
-        const randomNumber = Math.floor(Math.random() * (521333992782 - 5213346541709 + 1)) + 5213344753421;
-        
-        // Construir el enlace de WhatsApp con el número aleatorio
-        const message = "Hola, necesito asistencia con NekoBot.";
-        const whatsappLink = `https://wa.me/${randomNumber}?text=${encodeURIComponent(message)}`;
-        
-        // Redirigir al enlace
-        window.location.href = whatsappLink;
-    }
+    // Definir los números disponibles
+    const numbers = [
+        '+5213346541709',
+        '+5213344753421',
+        '+523339992782'
+    ];
+    
+    // Seleccionar un número aleatorio de la lista
+    const randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
+    
+    // Construir el enlace de WhatsApp con el número aleatorio
+    const message = "Hola, necesito asistencia con NekoBot.";
+    const whatsappLink = `https://wa.me/${randomNumber}?text=${encodeURIComponent(message)}`;
+    
+    // Redirigir al enlace
+    window.location.href = whatsappLink;
+}
 </script>
 </body>
 </html>
