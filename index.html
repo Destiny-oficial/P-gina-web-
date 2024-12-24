@@ -1,191 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centro de report Neko Bot ❄️</title>
+    <title>Centro de Ayuda Neko Bot ❄️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background-color: #f7f8fa;
+            color: #333;
+            line-height: 1.6;
         }
         header {
+            position: relative;
             text-align: center;
-            padding: 20px;
-            background-color: #0078D7;
+            width: 100%;
+            height: calc(100vw * 4 / 7); /* Proporción 4:7 */
             color: white;
+            background: url('https://postimage.me/images/2024/12/21/IMG-20241220-WA0088.jpg') no-repeat center center/cover;
+            overflow: hidden;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        header h1 {
+            position: relative;
+            z-index: 2;
+            font-size: 3em;
+            font-weight: 600;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+            margin: 0;
+            line-height: calc(100vw * 4 / 7);
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 25px;
             background: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
-        img {
-            max-width: 100%;
-            border-radius: 8px;
-        }
-        h1 {
-            font-size: 2em;
+        h2 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #4CAF50;
         }
         p {
-            margin: 10px 0;
+            margin-bottom: 20px;
+            font-size: 1em;
+            color: #555;
         }
         input[type="text"] {
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 15px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .faq {
-            margin-top: 20px;
-        }
-        .faq h2 {
-            font-size: 1.5em;
+            margin-top: 30px;
         }
         .faq-item {
-            margin-bottom: 10px;
-            padding: 10px;
-            border-left: 4px solid #0078D7;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-left: 5px solid #4CAF50;
             background: #f9f9f9;
-            border-radius: 4px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .faq-item:hover {
+            background-color: #f0f5f0;
         }
         .faq-item p {
             margin: 5px 0;
-            display: none; /* Oculta las respuestas inicialmente */
+            font-size: 15px;
+            display: none;
         }
         .faq-item.active p {
-            display: block; /* Muestra la respuesta cuando se activa */
+            display: block;
         }
         .faq-item strong {
+            color: #4CAF50;
+            font-size: 1.1em;
             cursor: pointer;
-            color: #0078D7;
-            text-decoration: underline;
         }
         .buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 15px;
+            margin-top: 25px;
         }
         .buttons button {
             flex: 1;
-            padding: 10px;
-            background-color: #0078D7;
+            padding: 15px;
+            background-color: #4CAF50;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
         .buttons button:hover {
-            background-color: #005bb5;
+            background-color: #388E3C;
+            transform: translateY(-2px);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+                line-height: calc(100vw * 4 / 7);
+            }
+            .buttons button {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Centro de report Neko Bot ❄️</h1>
+        <h1>Centro de Ayuda Neko Bot ❄️</h1>
     </header>
     <div class="container">
-        <img src="https://postimage.me/images/2024/12/18/IMG-20241217-WA0403.jpg" alt="Imagen de Ayuda">
-        <h2>Tu bot de confianza y aliado</h2>
-        <p>Escribeme tu pregunta o problema en el buscador para obtener respuestas do na aparece contactar un asesor.</p>
+        <h2>Tu bot de confianza</h2>
+        <p>Escribe tu pregunta o problema en el buscador para obtener respuestas. Si no encuentras solución, contacta con un asesor.</p>
         <input type="text" placeholder="Buscar preguntas o errores">
         <div class="faq">
             <h2>Preguntas Frecuentes</h2>
             <div class="faq-item" onclick="toggleFaq(this)">
-                <p><strong>1. ¿puedo obtener un bot Neko?</strong></p>
-                <p>si puedes obtener un bot de Neko pero le recordamos revisar nuestro aviso de privacidad para mayor información en las compras de nekoBot</p>
-            </div>
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <p><strong>2. ¿Qué hacer si mi bot no responde o no contesta?</strong></p>
+                <strong>2. ¿Qué hacer si mi bot no responde o no contesta?</strong>
                 <p>Revisa tu conexión en WhatsApp y también puedes contactar un asesor.</p>
             </div>
             <div class="faq-item" onclick="toggleFaq(this)">
-                <p><strong>3. ¿Cómo puedo contactar al soporte técnico?</strong></p>
+                <strong>3. ¿Cómo puedo contactar al soporte técnico?</strong>
                 <p>Utiliza el botón "Conectar a un Asesor" en esta página o envía un correo electrónico a destiny58336@gmail.com.</p>
             </div>
             <div class="faq-item" onclick="toggleFaq(this)">
-                <p><strong>4. ¿Qué métodos de pago aceptan?</strong></p>
-                <p>Aceptamos transferencia de banco BBVA, banco azteca, Santander,PayPal, mercado pago</p>
+                <strong>4. ¿Qué métodos de pago aceptan?</strong>
+                <p>Aceptamos transferencia de banco BBVA, banco Azteca, Santander, PayPal y Mercado Pago.</p>
             </div>
             <div class="faq-item" onclick="toggleFaq(this)">
-                <p><strong>5. ¿Como puedo cambiar la foto de mi bot o nombre de mi bot?</strong></p>
-                <p>puedes usar los comandos como setbanner link para cambiar el banner y setname para cambiar el nombre del bot</p>
-            </div>
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <p><strong>6. ¿Qué hacer si perdí mi número y todavía no se me acaba ka suscripción?</strong></p>
-                <p>puedes contactar a un asesor o entrar al grupo soporte para mayor ayuda.</p>
-            </div>
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <p><strong>7. ¿Cómo cancelo mi suscripción?</strong></p>
-                <p>Ve a la sección "Suscripciones" en tu perfil y selecciona "Cancelar suscripción".</p>
-            </div>
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <p><strong>8. ¿Puedo cambiar mi plan de suscripción?</strong></p>
-                <p>Sí, puedes cambiar tu plan en cualquier momento desde la configuración de tu cuenta.</p>
-            </div>
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <p><strong>9. ¿Dónde puedo ver el historial de mis transacciones?</strong></p>
-                <p>En la sección "Historial de pagos" de tu cuenta.</p>
-            </div>
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <p><strong>10. ¿Ofrecen soporte en otros idiomas?</strong></p>
-                <p>Sí, ofrecemos soporte en inglés, español y francés.</p>
+                <strong>5. ¿Cómo puedo cambiar la foto de mi bot o nombre de mi bot?</strong>
+                <p>Puedes usar los comandos como `setbanner link` para cambiar el banner y `setname` para cambiar el nombre del bot.</p>
             </div>
         </div>
         <div class="buttons">
             <button onclick="showTerms()">Términos y Condiciones</button>
-            <button onclick="sendReport()">Enviar un Reporte</button>
+            <button onclick="sendReport()">Enviar Reporte</button>
             <button onclick="connectAdvisor()">Conectar a un Asesor</button>
-            <button onclick="joinGroup()">Unirse al Grupo de soporte NekoBot ❄️</button>
+            <button onclick="joinGroup()">Unirse al Grupo de Soporte</button>
         </div>
     </div>
-
+    <footer>
+        © 2024-2032 Neko Bot. Todos los derechos reservados.
+    </footer>
     <script>
-    function toggleFaq(faqItem) {
-        faqItem.classList.toggle('active');
-    }
+        function toggleFaq(faqItem) {
+            faqItem.classList.toggle('active');
+        }
 
-    function showTerms() {
-        alert("Términos y condiciones de Neko Bot ❄️ al comprar tu bot para WhatsApp. Si al comprar tu bot o token para ser bot de WhatsApp te banean, no es nuestra responsabilidad ya que no estamos usando servidores confiables de WhatsApp. Para más información, contacta a soporte. Gracias. NekoBot ©2024-2032. Todos los derechos reservados.");
-    }
+        function showTerms() {
+            alert("Consulta nuestros términos y condiciones.");
+        }
 
-    function sendReport() {
-        alert("Formulario de reporte enviado.");
-    }
+        function showTerms() {
+    alert(`Términos y Condiciones de Neko Bot ❄️
 
-function joinGroup() {
-        // Enlace de invitación al grupo de WhatsApp
-        const groupInviteLink = "https://chat.whatsapp.com/FG4nnZTV138Lw1wIaskuQg";
-        
-        // Redirigir al enlace del grupo
-        window.location.href = groupInviteLink;
-    }
+Al adquirir un bot o token de Neko Bot para WhatsApp, aceptas que su uso es bajo tu completa responsabilidad. Nuestros bots operan mediante sistemas no oficiales y no autorizados por WhatsApp, lo que puede generar bloqueos, suspensiones o restricciones en las cuentas, de los cuales Neko Bot no se hace responsable. No garantizamos la continuidad del servicio, ya que depende de cambios realizados por WhatsApp en su plataforma.
 
-    function connectAdvisor() {
-    // Definir los números disponibles
-    const numbers = [
-        '+5213346541709',
-        '+5213344753421',
-        '+523339992782'
-    ];
-    
-    // Seleccionar un número aleatorio de la lista
-    const randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
-    
-    // Construir el enlace de WhatsApp con el número aleatorio
-    const message = "Hola, necesito asistencia con NekoBot.";
-    const whatsappLink = `https://wa.me/${randomNumber}?text=${encodeURIComponent(message)}`;
-    
-    // Redirigir al enlace
-    window.location.href = whatsappLink;
+Debido a la naturaleza digital del producto, no se realizan reembolsos. Sin embargo, nuestro equipo de soporte está disponible para ayudarte con la configuración o dudas técnicas, excluyendo problemas relacionados con bloqueos o suspensiones. Al usar nuestros productos, aceptas estas condiciones y entiendes los riesgos asociados.
+
+Gracias por confiar en Neko Bot ❄️.
+© 2024-2032 Neko Bot. Todos los derechos reservados.`);
 }
-</script>
+
+        function joinGroup() {
+            window.location.href = "https://chat.whatsapp.com/FG4nnZTV138Lw1wIaskuQg";
+        }
+
+        function connectAdvisor() {
+            const numbers = ['+5213346541709', '+5213344753421', '+523339992782'];
+            const randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
+            window.location.href = `https://wa.me/${randomNumber}?text=Hola, necesito asistencia con NekoBot.`;
+        }
+    </script>
 </body>
 </html>
